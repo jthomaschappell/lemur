@@ -4,6 +4,8 @@ variable "aws_region" {
 }
 
 variable "frontend_bucket_name" {
-  type = string
+  type    = string
+  default = "lemur-frontend-super-1122"
 }
+
 
