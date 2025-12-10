@@ -1,20 +1,6 @@
 import { useState } from 'react'
+import { lemurs } from '../data/lemurs'
 import './PlaceOrder.css'
-
-const lemurs = [
-  { id: 1, name: 'Ring-Tailed Lemur', price: 2999 },
-  { id: 2, name: 'Red Ruffed Lemur', price: 3499 },
-  { id: 3, name: 'Black Lemur', price: 2799 },
-  { id: 4, name: 'Blue-Eyed Black Lemur', price: 3999 },
-  { id: 5, name: 'Crowned Lemur', price: 3199 },
-  { id: 6, name: 'Brown Lemur', price: 2599 },
-  { id: 7, name: 'White-Fronted Lemur', price: 2899 },
-  { id: 8, name: 'Red-Bellied Lemur', price: 3299 },
-  { id: 9, name: 'Golden Bamboo Lemur', price: 3799 },
-  { id: 10, name: 'Sclater\'s Lemur', price: 3099 },
-  { id: 11, name: 'Sanford\'s Lemur', price: 2999 },
-  { id: 12, name: 'Mongoose Lemur', price: 2699 }
-]
 
 function PlaceOrder() {
   const [lineItems, setLineItems] = useState([])
