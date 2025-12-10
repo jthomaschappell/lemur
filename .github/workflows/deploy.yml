@@ -25,20 +25,20 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4 
         with:
           role-to-assume: arn:aws:iam::746697643581:role/github-oidc-lemur-role
-          aws-region: us-west-2   # CHANGE WAS MADE HERE
+          aws-region: us-west-2   
 
       - name: Install Terraform
-        uses: hashicorp/setup-terraform@v3               # CHANGE WAS MADE HERE
+        uses: hashicorp/setup-terraform@v3               
         with:
           terraform_version: "1.9.0"
 
       - name: Package Lambda functions
         run: |
           cd ../backend/checkout
-          zip -r ../../infra/checkout.zip .              # CHANGE WAS MADE HERE
+          zip -r ../../infra/checkout.zip .              
 
           cd ../ask_order
-          zip -r ../../infra/ask_order.zip .             # CHANGE WAS MADE HERE
+          zip -r ../../infra/ask_order.zip .             
 
       - name: Terraform Init
         run: terraform init
@@ -51,7 +51,7 @@ jobs:
 
       # Build the frontend
       - name: Install Node & build frontend
-        working-directory: frontend                      # CHANGE WAS MADE HERE
+        working-directory: frontend                      
         run: |
           npm ci
           npm run build
@@ -59,13 +59,13 @@ jobs:
       # Upload built frontend to S3
       - name: Upload frontend to S3
         run: |
-          FRONTEND_BUCKET=$(terraform output -raw frontend_bucket_name)  # CHANGE WAS MADE HERE
+          FRONTEND_BUCKET=$(terraform output -raw frontend_bucket_name)  
           aws s3 sync ../frontend/dist "s3://$FRONTEND_BUCKET" --delete
 
       # Invalidate CloudFront cache so new frontend is visible quickly
       - name: Invalidate CloudFront
         run: |
-          CF_ID=$(terraform output -raw cloudfront_distribution_id)      # CHANGE WAS MADE HERE
+          CF_ID=$(terraform output -raw cloudfront_distribution_id)      
           aws cloudfront create-invalidation \
             --distribution-id "$CF_ID" \
             --paths "/*"
