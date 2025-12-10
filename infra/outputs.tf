@@ -6,6 +6,10 @@ output "cloudfront_domain" {
   value = aws_cloudfront_distribution.frontend.domain_name
 }
 
+output "cloudfront_distribution_id" {
+  value = aws_cloudfront_distribution.frontend.id
+}
+
 output "products_table_name" {
   value = aws_dynamodb_table.products.name
 }
