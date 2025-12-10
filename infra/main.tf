@@ -248,7 +248,6 @@ resource "aws_lambda_function" "ask_order" {
   environment {
     variables = {
       ORDERS_TABLE = aws_dynamodb_table.orders.name
-      AWS_REGION   = var.aws_region
     }
   }
 }
