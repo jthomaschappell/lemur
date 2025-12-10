@@ -2,10 +2,10 @@ name: Deploy Lemur Store
 
 on:
   push:
-    branches: [ "main" ]      # CHANGE WAS MADE HERE
+    branches: [ "main" ]     
 
 permissions:
-  id-token: write             # required for OIDC
+  id-token: write           
   contents: read
 
 jobs:
@@ -15,16 +15,16 @@ jobs:
     # All Terraform commands will default to run in infra/
     defaults:
       run:
-        working-directory: infra   # CHANGE WAS MADE HERE
+        working-directory: infra 
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Configure AWS credentials (OIDC)
-        uses: aws-actions/configure-aws-credentials@v4   # CHANGE WAS MADE HERE
+        uses: aws-actions/configure-aws-credentials@v4 
         with:
-          role-to-assume: arn:aws:iam::<ACCOUNT_ID>:role/github-oidc-lemur-store   # CHANGE WAS MADE HERE
+          role-to-assume: arn:aws:iam::746697643581:role/github-oidc-lemur-role
           aws-region: us-west-2   # CHANGE WAS MADE HERE
 
       - name: Install Terraform
