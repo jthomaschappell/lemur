@@ -84,10 +84,10 @@ function Home() {
       <div className="home-hero">
         <div className="home-hero-content">
           <h1 className="home-title">
-            <span className="title-highlight-green">Premium</span>{' '}
+            <span className="title-highlight-green">Whimsical</span>{' '}
             <span className="title-highlight-yellow">Lemurs</span>
             <br />
-            for Your Collection
+            for You
           </h1>
           <p className="home-subtitle">
             Discover our handpicked selection of the finest lemurs. Each one is carefully
