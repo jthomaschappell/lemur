@@ -1,0 +1,120 @@
+{
+  "products": [
+    {
+      "PutRequest": {
+        "Item": {
+          "productId": { "S": "LEMUR#RingTailed" },
+          "name": { "S": "Ring-tailed lemur" },
+          "species": { "S": "Lemur catta" },
+          "family": { "S": "Lemuridae" },
+          "price": { "N": "59.99" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "productId": { "S": "LEMUR#Indri" },
+          "name": { "S": "Indri" },
+          "species": { "S": "Indri indri" },
+          "family": { "S": "Indriidae" },
+          "price": { "N": "89.99" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "productId": { "S": "LEMUR#DiademedSifaka" },
+          "name": { "S": "Diademed sifaka" },
+          "species": { "S": "Propithecus diadema" },
+          "family": { "S": "Indriidae" },
+          "price": { "N": "74.99" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "productId": { "S": "LEMUR#VerreauxSifaka" },
+          "name": { "S": "Verreaux’s sifaka" },
+          "species": { "S": "Propithecus verreauxi" },
+          "family": { "S": "Indriidae" },
+          "price": { "N": "68.99" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "productId": { "S": "LEMUR#CoquerelSifaka" },
+          "name": { "S": "Coquerel’s sifaka" },
+          "species": { "S": "Propithecus coquereli" },
+          "family": { "S": "Indriidae" },
+          "price": { "N": "66.99" }
+        }
+      }
+    },
+
+    {
+      "PutRequest": {
+        "Item": {
+          "productId": { "S": "LEMUR#CrownedSifaka" },
+          "name": { "S": "Crowned sifaka" },
+          "species": { "S": "Propithecus coronatus" },
+          "family": { "S": "Indriidae" },
+          "price": { "N": "63.99" }
+        }
+      }
+    },
+
+    {
+      "PutRequest": {
+        "Item": {
+          "productId": { "S": "LEMUR#PerrierSifaka" },
+          "name": { "S": "Perrier’s sifaka" },
+          "species": { "S": "Propithecus perrieri" },
+          "family": { "S": "Indriidae" },
+          "price": { "N": "92.99" }
+        }
+      }
+    },
+
+    {
+      "PutRequest": {
+        "Item": {
+          "productId": { "S": "LEMUR#GoldenCrownedSifaka" },
+          "name": { "S": "Golden-crowned sifaka" },
+          "species": { "S": "Propithecus tattersalli" },
+          "family": { "S": "Indriidae" },
+          "price": { "N": "84.99" }
+        }
+      }
+    },
+
+    {
+      "PutRequest": {
+        "Item": {
+          "productId": { "S": "LEMUR#AyeAye" },
+          "name": { "S": "Aye-aye" },
+          "species": { "S": "Daubentonia madagascariensis" },
+          "family": { "S": "Daubentoniidae" },
+          "price": { "N": "109.99" }
+        }
+      }
+    },
+
+    {
+      "PutRequest": {
+        "Item": {
+          "productId": { "S": "LEMUR#EasternLesserBamboo" },
+          "name": { "S": "Eastern lesser bamboo lemur" },
+          "species": { "S": "Hapalemur griseus" },
+          "family": { "S": "Lemuridae" },
+          "price": { "N": "42.99" }
+        }
+      }
+    }
+  ]
+}
+

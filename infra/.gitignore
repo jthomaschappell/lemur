@@ -1,0 +1,15 @@
+# CHANGE WAS MADE HERE
+# Terraform state
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+
+# Sensitive vars
+terraform.tfvars
+*.auto.tfvars
+
+# Generated config
+.terraform/
+.terraform.lock.hcl
