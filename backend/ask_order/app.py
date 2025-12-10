@@ -11,7 +11,7 @@ def handler(event, context):
     question = body.get("question", "")
     order_id = body.get("orderId", "")
 
-    # ===== CHANGE WAS MADE HERE: fetch order from DynamoDB =====
+    # ===== fetch order from DynamoDB =====
     order = None
     if order_id:
         resp = orders_table.get_item(Key={"orderId": order_id})
