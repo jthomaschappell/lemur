@@ -18,7 +18,7 @@ def handler(event, context):
         order = resp.get("Item", None)
 
     order_context = (
-        f"Order status: {order.get('orderStatus')}\n"
+        f"Order status: {order.get('status')}\n"
         f"Total: {order.get('total')}\n"
         f"ETA: {order.get('eta')}\n"
         if order else "Order not found.\n"

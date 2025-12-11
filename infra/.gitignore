@@ -7,3 +7,6 @@ terraform.tfvars
 
 # Generated config
 .terraform/
+
+# Python virtual environment
+venv/
