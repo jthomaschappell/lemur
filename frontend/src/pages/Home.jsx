@@ -1,8 +1,20 @@
+import { useState } from 'react'
 import LemurCard from '../components/LemurCard'
+import LemurModal from '../components/LemurModal'
 import { lemurs } from '../data/lemurs'
 import './Home.css'
 
 function Home() {
+  const [selectedLemur, setSelectedLemur] = useState(null)
+
+  const handleCardClick = (lemur) => {
+    setSelectedLemur(lemur)
+  }
+
+  const handleCloseModal = () => {
+    setSelectedLemur(null)
+  }
+
   return (
     <div className="home">
       <div className="home-hero">
@@ -22,10 +34,15 @@ function Home() {
       <div className="home-content">
         <div className="lemur-grid">
           {lemurs.map(lemur => (
-            <LemurCard key={lemur.id} lemur={lemur} />
+            <LemurCard 
+              key={lemur.id} 
+              lemur={lemur} 
+              onClick={() => handleCardClick(lemur)}
+            />
           ))}
         </div>
       </div>
+      <LemurModal lemur={selectedLemur} onClose={handleCloseModal} />
     </div>
   )
 }

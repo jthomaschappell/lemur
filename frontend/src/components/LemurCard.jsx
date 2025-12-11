@@ -1,8 +1,8 @@
 import './LemurCard.css'
 
-function LemurCard({ lemur }) {
+function LemurCard({ lemur, onClick }) {
   return (
-    <div className="lemur-card">
+    <div className="lemur-card" onClick={onClick}>
       <div className="lemur-card-image">
         <img src={lemur.image} alt={lemur.name} />
       </div>
