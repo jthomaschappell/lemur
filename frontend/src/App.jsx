@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import PlaceOrder from './pages/PlaceOrder'
+import Chatbot from './pages/Chatbot'
 import './App.css'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/place-order" element={<PlaceOrder />} />
+          <Route path="/chatbot" element={<Chatbot />} />
         </Routes>
       </div>
     </Router>

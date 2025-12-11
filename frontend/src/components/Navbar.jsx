@@ -12,6 +12,7 @@ function Navbar() {
           <Link to="/" className="navbar-link">Home</Link>
           <Link to="/about" className="navbar-link">About</Link>
           <Link to="/place-order" className="navbar-link">Place Order</Link>
+          <Link to="/chatbot" className="navbar-link">Ask About Order</Link>
         </div>
       </div>
     </nav>
