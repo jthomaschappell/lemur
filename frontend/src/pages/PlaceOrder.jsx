@@ -1,11 +1,28 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { lemurs } from '../data/lemurs'
 import './PlaceOrder.css'
 
 function PlaceOrder() {
+  const location = useLocation()
   const [lineItems, setLineItems] = useState([])
   const [showCheckout, setShowCheckout] = useState(false)
   const [orderNumber, setOrderNumber] = useState(null)
+
+  // Initialize with pre-selected lemur from navigation state
+  useEffect(() => {
+    if (location.state?.selectedLemur) {
+      const selectedLemur = location.state.selectedLemur
+      const newItem = {
+        id: Date.now(),
+        lemurId: selectedLemur.id.toString(),
+        quantity: 1
+      }
+      setLineItems([newItem])
+      // Clear the state to prevent re-adding on re-render
+      window.history.replaceState({}, document.title)
+    }
+  }, [location.state])
 
   const generateOrderNumber = () => {
     return 'LEM-' + Date.now().toString().slice(-8) + '-' + Math.random().toString(36).substr(2, 4).toUpperCase()

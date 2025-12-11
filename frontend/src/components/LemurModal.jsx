@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './LemurModal.css'
 
 function LemurModal({ lemur, onClose }) {
+  const navigate = useNavigate()
   useEffect(() => {
     if (!lemur) return
 
@@ -26,6 +28,11 @@ function LemurModal({ lemur, onClose }) {
     return `$${(cents / 100).toFixed(2)}`
   }
 
+  const handleAddToCart = () => {
+    navigate('/place-order', { state: { selectedLemur: lemur } })
+    onClose()
+  }
+
   return (
     <div className="lemur-modal-overlay" onClick={onClose}>
       <div className="lemur-modal-content" onClick={(e) => e.stopPropagation()}>
@@ -43,6 +50,9 @@ function LemurModal({ lemur, onClose }) {
               <span className="price-label">Price:</span>
               <span className="price-value">{formatPrice(lemur.price)}</span>
             </div>
+            <button className="lemur-modal-add-to-cart" onClick={handleAddToCart}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
