@@ -56,6 +56,21 @@ jobs:
           npm ci
           npm run build
 
+      # Verify lemur images are included in build
+      - name: Verify lemur images in dist
+        working-directory: frontend
+        run: |
+          if [ ! -d "dist/lemurs" ]; then
+            echo "Error: dist/lemurs directory not found!"
+            exit 1
+          fi
+          IMAGE_COUNT=$(find dist/lemurs -type f \( -name "*.jpg" -o -name "*.JPG" \) | wc -l)
+          echo "Found $IMAGE_COUNT lemur images in dist/lemurs"
+          if [ "$IMAGE_COUNT" -eq 0 ]; then
+            echo "Error: No lemur images found in dist/lemurs!"
+            exit 1
+          fi
+
       # Upload built frontend to S3
       - name: Upload frontend to S3
         run: |
