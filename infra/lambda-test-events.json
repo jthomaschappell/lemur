@@ -1,0 +1,11 @@
+{
+  "checkout_test": {
+    "body": "{\"items\": [{\"productId\": \"ring-tailed-lemur\", \"quantity\": 2}, {\"productId\": \"indri\", \"quantity\": 1}]}"
+  },
+  "ask_order_valid": {
+    "body": "{\"orderId\": \"afd9f6cd-1234-5678-9abc-def012345678\", \"question\": \"What is the status of my order?\"}"
+  },
+  "ask_order_invalid": {
+    "body": "{\"orderId\": \"00000000-0000-0000-0000-000000000000\", \"question\": \"Where is my order?\"}"
+  }
+}
